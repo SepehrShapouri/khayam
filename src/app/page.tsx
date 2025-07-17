@@ -90,13 +90,6 @@ const CustomAudioPlayer: React.FC<AudioPlayerProps> = ({ src, name }) => {
   return (
     <div className="bg-neutral-900 text-white rounded-lg p-6 w-full">
       <audio ref={audioRef} src={src} />
-      
-      {/* Track Name */}
-      <div className="mb-4">
-        <h3 className="text-base font-medium text-gray-300 truncate">{name}</h3>
-      </div>
-
-      {/* Progress Bar */}
       <div 
         className="w-full h-1 bg-gray-700 rounded-full mb-4 cursor-pointer"
         onClick={handleProgressClick}
@@ -236,7 +229,7 @@ export default function Homepage() {
         </div>
         <Link href="/#gallery"><ArrowDown className="text-muted-foreground size-10 mb-20" /></Link>
       </div>
-      <div className="space-y-8" id="gallery">
+      <div className="space-y-8 pt-20" id="gallery">
         {mediaFiles.map((file) => (
           <div key={file.id}>
             {renderMediaContent(file)}
