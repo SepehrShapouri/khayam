@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { RefreshCw, Play, Pause, Volume2, Omega, ArrowDown } from "lucide-react";
+import { RefreshCw, Play, Pause, Volume2, Omega, ArrowDown, Loader2 } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -214,7 +214,7 @@ export default function Homepage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <RefreshCw className="h-8 w-8 animate-spin text-muted-foreground" />
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     );
   }
