@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { RefreshCw, Play, Pause, Volume2 } from "lucide-react";
+import { RefreshCw, Play, Pause, Volume2, Omega, ArrowDown } from "lucide-react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface MediaFile {
   id: string;
@@ -226,7 +228,15 @@ export default function Homepage() {
 
   return (
     <div className="container mx-auto p-6 max-w-4xl">
-      <div className="space-y-8">
+      <div className="flex justify-between pt-10 items-center min-h-screen flex-col gap-5">
+        <div className="flex flex-col gap-5">
+          <Image src="/main-image.png" width={1958} height={1995} alt="text-main" />
+          <Image src="/text-main.png" width={2354} height={536} alt="text-main" />
+          <Image src="/text-second.png" width={1080} height={279} alt="text-second" />
+        </div>
+        <Link href="/#gallery"><ArrowDown className="text-muted-foreground size-10 mb-20" /></Link>
+      </div>
+      <div className="space-y-8" id="gallery">
         {mediaFiles.map((file) => (
           <div key={file.id}>
             {renderMediaContent(file)}
