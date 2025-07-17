@@ -229,7 +229,7 @@ export default function Homepage() {
         </div>
         <Link href="/#gallery"><ArrowDown className="text-muted-foreground size-10 mb-20" /></Link>
       </div>
-      <div className="space-y-8 pt-20" id="gallery">
+      <div className="space-y-8 pt-10 flex flex-col-reverse gap-4" id="gallery">
         {mediaFiles.map((file) => (
           <div key={file.id}>
             {renderMediaContent(file)}
