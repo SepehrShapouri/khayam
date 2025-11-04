@@ -220,9 +220,9 @@ export default function Homepage() {
 
   return (
     <div className="h-screen">
-      <div className="flex p-2 gap-4 h-full" id="gallery">
+      <div className="flex p-2 gap-4 h-full items-center justify-center" id="gallery">
         {mediaFiles.map((file) => (
-          <div key={file.id} className="h-full">
+          <div key={file.id} className="h-full flex items-center justify-center">
             {renderMediaContent(file)}
           </div>
         ))}
