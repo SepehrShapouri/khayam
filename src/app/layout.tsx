@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,11 +11,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "مرحوم سید مرتضی عربی",
-  description: "خاطرات مرحوم سید مرتضی عربی",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black hidden-scrollbar`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  hidden-scrollbar`}
       >
         {children}
       </body>

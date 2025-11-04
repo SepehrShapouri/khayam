@@ -184,10 +184,9 @@ export default function Homepage() {
         <Image
           src={file.url}
           alt={file.name}
-          className="w-full h-auto rounded-lg"
+          className="w-full h-full rounded-lg"
           loading="lazy"
-          width={1000}
-          height={1000}
+          fill
         />
       );
     }
@@ -196,7 +195,7 @@ export default function Homepage() {
       return (
         <video
           controls
-          className="w-full h-auto rounded-lg"
+          className="w-full h-full rounded-lg object-cover"
           preload="metadata"
         >
           <source src={file.url} />
@@ -220,18 +219,10 @@ export default function Homepage() {
   }
 
   return (
-    <div className="container mx-auto p-6 max-w-4xl">
-      <div className="flex justify-between pt-10 items-center min-h-screen flex-col gap-5">
-        <div className="flex flex-col gap-5">
-          <Image src="/main-image.png" width={1958} height={1995} alt="text-main" />
-          <Image src="/text-main.png" width={2354} height={536} alt="text-main" />
-          <Image src="/text-second.png" width={1080} height={279} alt="text-second" />
-        </div>
-        <Link href="/#gallery"><ArrowDown className="text-muted-foreground size-10 mb-20" /></Link>
-      </div>
-      <div className="space-y-8 pt-10 flex flex-col-reverse gap-4" id="gallery">
+    <div className="h-screen">
+      <div className="flex p-2 gap-4 h-full" id="gallery">
         {mediaFiles.map((file) => (
-          <div key={file.id}>
+          <div key={file.id} className="h-full">
             {renderMediaContent(file)}
           </div>
         ))}
